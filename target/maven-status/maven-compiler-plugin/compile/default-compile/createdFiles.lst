@@ -1,0 +1,6 @@
+com\example\portfolio\dto\TrackRequest.class
+com\example\portfolio\controller\AnalyticsController.class
+com\example\portfolio\service\AnalyticsService.class
+com\example\portfolio\dto\StatsResponse.class
+com\example\portfolio\config\RedisConfig.class
+com\example\portfolio\PortfolioApplication.class
