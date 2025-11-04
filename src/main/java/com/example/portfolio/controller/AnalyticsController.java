@@ -33,6 +33,7 @@ public class AnalyticsController {
     public ResponseEntity<StatsResponse> stats() {
         StatsResponse s = new StatsResponse();
         s.setTotalVisits(analyticsService.getTotalVisits());
+        s.setVisitsToday(analyticsService.getVisitsToday());
         s.setUniqueVisitors(analyticsService.getUniqueVisitors());
         List<String> last = analyticsService.getLastVisits();
         s.setLastVisits(last);

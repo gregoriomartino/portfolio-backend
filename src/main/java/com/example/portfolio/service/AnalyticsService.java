@@ -24,6 +24,10 @@ public class AnalyticsService {
         // increment total
         redis.opsForValue().increment(TOTAL_KEY);
 
+        // increment daily count
+        String todayKey = getTodayKey();
+        redis.opsForValue().increment(todayKey);
+
         // add to unique set (by IP)
         if (ip != null) {
             redis.opsForSet().add(UNIQUE_SET, ip);
@@ -48,7 +52,18 @@ public class AnalyticsService {
         return s == null ? 0 : s;
     }
 
+    public long getVisitsToday() {
+        String v = redis.opsForValue().get(getTodayKey());
+        return v == null ? 0 : Long.parseLong(v);
+    }
+
     public List<String> getLastVisits() {
         return redis.opsForList().range(LOG_LIST, 0, LOG_SIZE - 1);
+    }
+
+    private String getTodayKey() {
+        String today = DateTimeFormatter.ofPattern("yyyyMMdd")
+                .format(Instant.now().atZone(ZoneOffset.UTC));
+        return "visits:" + today;
     }
 }
