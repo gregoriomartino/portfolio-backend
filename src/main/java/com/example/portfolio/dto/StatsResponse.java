@@ -13,7 +13,8 @@ public class StatsResponse {
     public void setTotalVisits(long totalVisits) { this.totalVisits = totalVisits; }
 
     public long getVisitsToday() { return visitsToday; }    
-    public void setVisitsToday(long visitsToday) { this.visitsToday = visitsToday; }  
+    public void setVisitsToday(long visitsToday) { this.visitsToday = visitsToday; } 
+     
     public long getUniqueVisitors() { return uniqueVisitors; }
     public void setUniqueVisitors(long uniqueVisitors) { this.uniqueVisitors = uniqueVisitors; }
 

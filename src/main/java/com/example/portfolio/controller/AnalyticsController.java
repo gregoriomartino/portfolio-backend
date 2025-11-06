@@ -11,7 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:3000", "https://gregoriomartino.github.io"})  // adjust as needed for your frontend
+@CrossOrigin(origins = {
+    "http://localhost:3000",
+    "https://gregoriomartino.github.io",
+    "https://gregoriomartino.github.io/gregorio-martino-portfolio",
+    "https://portfolio-backend-mx08.onrender.com"
+})
+
 
 public class AnalyticsController {
 
